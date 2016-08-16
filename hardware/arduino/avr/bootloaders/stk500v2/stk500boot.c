@@ -2,6 +2,7 @@
 Title:     STK500v2 compatible bootloader
            Modified for Wiring board ATMega128-16MHz
 Author:    Peter Fleury <pfleury@gmx.ch>   http://jump.to/fleury
+File:      $Id: stk500boot.c,v 1.11 2006/06/25 12:39:17 peter Exp $
 Compiler:  avr-gcc 3.4.5 or 4.1 / avr-libc 1.4.3
 Hardware:  All AVRs with bootloader support, tested with ATmega8
 License:   GNU General Public License
@@ -582,9 +583,9 @@ int main(void)
 	boot_state	=	0;
 
 #ifdef BLINK_LED_WHILE_WAITING
-//	boot_timeout	=	 90000;		//*	should be about 4 seconds
-//	boot_timeout	=	170000;
-	boot_timeout	=	 20000;		//*	should be about 1 second
+	boot_timeout	=	 90000;		//*	should be about 4 seconds
+	//boot_timeout	=	170000;
+//	boot_timeout	=	 20000;		//*	should be about 1 second
 #else
 	boot_timeout	=	3500000; // 7 seconds , approx 2us per step when optimize "s"
 #endif
